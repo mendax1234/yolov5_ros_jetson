@@ -28,9 +28,31 @@ chmod +x detect.py
 ## Basic usage
 Change the parameter for `input_image_topic` in launch/yolov5.launch to any ROS topic with message type of `sensor_msgs/Image` or `sensor_msgs/CompressedImage`. Other parameters can be modified or used as is.
 
-* Launch the node:
+* Launch the node with default parameters:
 ```bash
 roslaunch yolov5_ros yolov5.launch
+```
+
+* Launch the node with custom parameters:
+```bash
+roslaunch yolov5_ros yolov5.launch \
+    weights:=/path/to/your/custom_weights.pt \
+    data:=/path/to/your/custom_data.yaml \
+    confidence_threshold:=0.8 \
+    iou_threshold:=0.5 \
+    maximum_detections:=500 \
+    device:=gpu \
+    agnostic_nms:=false \
+    line_thickness:=5 \
+    dnn:=false \
+    half:=true \
+    inference_size_h:=720 \
+    inference_size_w:=1280 \
+    view_image:=false \
+    input_image_topic:=/your/custom/image/topic \
+    output_topic:=/your/custom/output/topic \
+    publish_image:=true \
+    output_image_topic:=/your/custom/output/image/topic
 ```
 
 ## Using custom weights and dataset (Working)
