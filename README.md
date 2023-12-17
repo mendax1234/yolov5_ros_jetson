@@ -1,4 +1,4 @@
-# YOLOv5 ROS
+# YOLOv5 ROS on Nvidia Jetson
 This is a ROS interface for using YOLOv5 for real time object detection on a ROS image topic. It supports inference on multiple deep learning frameworks used in the [official YOLOv5 repository](https://github.com/ultralytics/yolov5).
 
 ## Installation
